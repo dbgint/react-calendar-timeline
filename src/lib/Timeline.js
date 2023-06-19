@@ -479,18 +479,9 @@ export default class ReactCalendarTimeline extends Component {
 
   onScroll = scrollX => {
     const width = this.state.width
-    let newScrollX = scrollX
-    // move the virtual canvas if needed
-    // if scrollX is less...i dont know how to explain the logic here
-    if (newScrollX < width * 0.5) {
-      newScrollX += width
-    }
-    if (newScrollX > width * 1.5) {
-      newScrollX -= width
-    }
 
-    this.headerRef.scrollLeft = newScrollX
-    this.scrollComponent.scrollLeft = newScrollX
+    this.headerRef.scrollLeft = scrollX
+    this.scrollComponent.scrollLeft = scrollX
 
     const canvasTimeStart = this.state.canvasTimeStart
 
